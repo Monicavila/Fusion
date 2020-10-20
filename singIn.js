@@ -1,16 +1,11 @@
-function button() {
-    let goodPass = passSafety()
-    send(goodPass)
-
-}
-
 function passSafety() {
-    var lengthPass = document.getElementById('inputPassword').value
+    var element = document.getElementById('inputPassword')
+    var lengthPass = element.value
     const msg = document.getElementById('passwordHelp')
     if (lengthPass.length < 8) {
         msg.style.color = '#ff3389'
         alert('La contraseña debe tener almens 8 caracteres')
-        lengthPass = ""
+        element.value = ""
         console.log('Ya debio limpiar')
         return false
     }
@@ -31,8 +26,19 @@ function send(passSafety) {
                 'Content-Type': 'application/json', 'Accept': 'application/json'
             },
                 body: JSON.stringify(data)
-            })
-           .then(response => console.log(response))
-           .then(data => console.log('Success:', data))
+        })
+        .then(response => {
+            const obtuve = response.json()
+            console.log( obtuve)
+            return obtuve
+            // console.log( obtuve.[[PromiseResult]])
+        })
+        .then(data => console.log('Success:', data))
     }
+}
+
+
+function button() {
+    let goodPass = passSafety()
+    send(goodPass)
 } 
