@@ -29,12 +29,7 @@ function send(passSafety) {
         .then(data => saveName(data.id, sendStatus))
     }
 }
-function registeredEmail(status) {
-    if (status == 422) {
-        alert('El correo ya esta registrado, prueba con otro')
-    }
 
-}
 
 function saveName(id, status) {
     if (status == 201) {
