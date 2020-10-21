@@ -45,13 +45,26 @@ function getUser(){
 getUser();
 
 function printUser(user){
-    // const tableBody = document.getElementById('users');
+    const tableBody = document.getElementById('users');
     // const mailLog =  document.getElementById('email-login').value;
     tableBody.innerHTML = '';
     user.forEach(re => {
         let row = `<p>${re.name}</p>
                 <p>${re.email}</p>
-                <button type="submit" onclick="editUser(${re.id})">Editar</button>`
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Mostrar
+                    </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <label for="email">mail</label>
+                        <input type="email" id="email">
+                        <label for="name">nombre</label>
+                        <input type="text" id="name">
+                        <button class="btn btn-primary" type="button" onclick="editUser(${re.id})">Editar</button>
+                    </div>
+                </div>`
         tableBody.innerHTML += row;                                
     }); 
 }
@@ -63,6 +76,7 @@ function editUser(id) {
 }
 editUser;
 
+// Para cargar la imagen
 function openFile(event) {
     var input = event.target;
 
