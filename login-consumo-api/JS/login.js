@@ -21,14 +21,13 @@ function login() {
 }
 
 function checkCredentials(response){
-    console.log(response);
+
     if(response == undefined){
         alert('No user found for this email/password');
     } else {
-        //window.location.href = "http://sitioweb.com";
         window.location.replace("./home.html");
+        sessionStorage.setItem('id', response.id);   
     }
 }
-
 
 
