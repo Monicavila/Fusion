@@ -1,4 +1,4 @@
-export default class Print{
+export default class Print{ 
 
     printRequests(r){
         //const invitations=r[0];

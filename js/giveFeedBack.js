@@ -1,4 +1,4 @@
-import invitations from './invitations.js'
+import invitations from './invitations.js' 
 const id_user=64;
 
 function callSkills(idInvitation,email){

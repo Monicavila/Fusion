@@ -3,7 +3,7 @@ import Print from './Print.js';
 export default class Invitations{
 
     callInvitations(id){
-        const _info=new Information();
+        const _info=new Information(); 
         const _print=new Print();
        // return new Promise((resolve,reject)=>{
             fetch(`https://matter-app.herokuapp.com/api/v1/users/${id}/feedback-invitations`, {

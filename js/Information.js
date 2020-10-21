@@ -1,4 +1,4 @@
-export default class Information{
+export default class Information{ 
     
     callInfo(invitations,ids){
         return new Promise((resolve,reject)=>{  
