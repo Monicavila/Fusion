@@ -1,66 +1,5 @@
+import invitations from './invitations.js'
 const id_user=64;
-function callInvitations(id){
-    fetch(`https://matter-app.herokuapp.com/api/v1/users/${id}/feedback-invitations`, {
-        method: 'GET',
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        },
-       
-    })
-    .then(response => response.json())
-    .then(data => {
-        const idsArray=[];
-        data.forEach(element=>idsArray.push(element.user_id))
-        callInfo(data,idsArray)
-        .then((r)=>printRequests(r))
-    })
-}
-function callInfo(invitations,ids){
-  return new Promise((resolve,reject)=>{  
-    const values=[]
-    const arrayReturn=[]
-    ids.forEach(element=>{
-        fetch(`https://matter-app.herokuapp.com/api/v1/users/${element}`, {
-            method: 'GET',
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            },
-           
-        })
-        .then(response => response.json())
-        .then(data => {
-           values.push({id:data.id,name:data.name,email:data.email})
-            if(ids.length==values.length){
-                arrayReturn.push(invitations);
-                arrayReturn.push(values);
-               resolve(arrayReturn);
-           }
-        })
-    })
-  })
-    // printRequests(invitations,names,emails);
-}
-
-function printRequests(r){
- const invitations=r[0];
-let allPersons=document.getElementById('persons-to-give');
-allPersons.innerHTML='';
-
-invitations.forEach(invitation=>{
-    const info=r[1].find(element=>element.id==invitation.user_id)
-    
-    allPersons.innerHTML+=`<div class="card col-md-4 col-sm-12 m-2" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">${info.email}</h5>
-                                    <p class="card-text">Te ha enviado una petición de feedback, pulsa el botón para realizarla.</p>
-                                    <a href="#" onclick="callSkills('${invitation.id}','${info.email}')" class="btn btn-primary">FEEDBACK</a>
-                                </div>
-                            </div>`
-    
-})
-}
 
 function callSkills(idInvitation,email){
     fetch('https://matter-app.herokuapp.com/api/v1/skills', {
@@ -78,7 +17,7 @@ function callSkills(idInvitation,email){
 }
 
 function printSkills(skills,invitationId,email){
-    allSkills=document.getElementById('skills');
+    const allSkills=document.getElementById('skills');
     allSkills.innerHTML='';
     const starHtml=`<form onsubmit="event.preventDefault(),summit(${skills.length})" class="card col-md-12 col-sm-12 m-2" style="width: 18rem;" id="form-skills">
                     <h5 class="card-title">Invitación numero: ${invitationId}</h5>`;
@@ -185,6 +124,7 @@ function summit(length){
       
     values.skillsIds.forEach((element,index) => {
         //console.log(values.scores[index]);
+        
         data={score:String(values.scores[index])}
         fetch(`https://matter-app.herokuapp.com/api/v1/invitations/${values.invitationId}/skills/${element}`, {
             method: 'POST',
@@ -198,6 +138,7 @@ function summit(length){
             // response.json()})
             if(response.status==200){
                 alert("los datos se guardaron correctamente")
+                callInvitations(id_user);
             }
             else{
                 alert("no se pudo guardar")
@@ -208,4 +149,6 @@ function summit(length){
     
     
 }
-callInvitations(id_user);
+const _invitations=new invitations();
+_invitations.callInvitations(id_user);
+window.callSkills=callSkills;
