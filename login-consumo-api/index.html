@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Modal Login Form</h2>
+
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    
+    <div id="id01" class="modal">
+      
+      <form onsubmit="event.preventDefault(), login()" class="modal-content animate" action="" method="post">
+    
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input  type="email" placeholder="Enter email" name="email" id="input-email" required>
+    
+          <label for="psw"><b>Password</b></label>
+
+          <input type="password" placeholder="Enter Password" name="psw" id="input-psw" required>
+            
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+    <script src="./JS/login.js"></script>
+    <script src="./JS/click.js"></script>
+    
+    </body>
+    </html>
