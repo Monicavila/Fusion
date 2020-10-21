@@ -10,71 +10,101 @@
 //     ui.getUser(urlGetUSer); 
        
 // });
-// function getUser(){
-//     fetch('https://matter-app.herokuapp.com/api/v1/users')
-//     .then(response => response.json())
-//     .then(data => printUser(data))        
-// }
-// getUser();
 
-// function userId(data){
-//     let idUs = data.forEach(re => {
-//         let row = re['id']; 
-//         return row;                                   
-//     });    
 
-//     console.log(idUs);
 
-//     // fetch(`https://matter-app.herokuapp.com/api/v1/users/${idUs}`)
-//     //     .then(response => response.json())
-//     //     .then(data => console.log(data)); 
-// }
-// userId;
+// let idEdit = false;
 
-// function putUser(){
-//     fetch(`'https://matter-app.herokuapp.com/api/v1/users/${userId()}'`)
-//     .then(response => response.json())
-//     .then(data => console.log(data));
-// }
-// putUser();
 function getUser(){
     fetch('https://matter-app.herokuapp.com/api/v1/users')
     .then(response => response.json())
-    .then(data => printUser(data))        
+    .then(data => userId(data))        
 }
 getUser();
 
-function printUser(user){
-    const tableBody = document.getElementById('users');
-    // const mailLog =  document.getElementById('email-login').value;
-    tableBody.innerHTML = '';
-    user.forEach(re => {
-        let row = `<p>${re.name}</p>
-                <p>${re.email}</p>
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Mostrar
-                    </button>
-                </p>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <label for="email">mail</label>
-                        <input type="email" id="email">
-                        <label for="name">nombre</label>
-                        <input type="text" id="name">
-                        <button class="btn btn-primary" type="button" onclick="editUser(${re.id})">Editar</button>
-                    </div>
-                </div>`
-        tableBody.innerHTML += row;                                
-    }); 
+function userId(data){
+    let mailLog =  document.getElementById('email-login').value;
+    
+    data.forEach(re => {
+        if(re.email === mailLog) {
+            // let newID = re.id;
+            // console.log(newID)
+            alert("usuario encontrado");
+        }                                 
+    });    
 }
-// printUser();
+userId;
 
-// Guardar
-function editUser(id) {
-     alert(id);  
-}
-editUser;
+
+// function oneUser(){
+//     fetch(`'https://matter-app.herokuapp.com/api/v1/users/${userId()}'`)
+//     .then(response => response.json())
+//     .then(data => printUser(data));
+// }
+// oneUser();
+
+// function printUser(user){
+//     const tableBody = document.getElementById('users');
+//     // let mailLog =  document.getElementById('email-login').value;
+//     tableBody.innerHTML = '';
+
+//     user.forEach(re => {
+//         // if(mailLog === re.mail){
+//             let row = `<p>${re.name}</p>
+//                 <p>${re.email}</p>
+//                 <p>
+//                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+//                         Mostrar
+//                     </button>
+//                 </p>
+//                 <div id="clearUser" onsubmit="event.preventDefault(), saveUser()">
+//                     <div class="collapse" id="collapseExample">
+//                         <div class="card card-body">
+//                             <label for="name">nombre</label>
+//                             <input type="text" id="name">
+//                             <button class="btn btn-primary" type="button" onclick="editUser(${re.id})">Editar</button>
+//                         </div>
+//                     </div>
+//                 </div>`
+//             tableBody.innerHTML += row; 
+//         // }                               
+//     }); 
+// }
+//  printUser;
+
+// //Editar
+// function editUser(id) {
+//     const edUser = re.filter(re => re.id === id)
+//     const inputName = document.getElementById('name'); //en estos input se ponen los valores
+//     inputName.value = edUser.name; //poner los imput los valores que se van a editar
+//     idEdit = edUser.id;
+//     console.log(edUser);
+//     console.log(id);
+// }
+// editUser;
+
+// // //guardar
+// function saveUser() {
+//     const newName = document.getElementById('name').value;//obtiene los nuevos valores para guardar
+//     if(idEdit === false) {
+//         alert('selecciona el nombre a editar');
+//         return;
+//     }
+//     //actualiza el array de usuarios
+//     const edUser = user.find(re => re.id === idEdit)
+//     edUser.name = newName;
+
+//     //para limpiar el input
+//     document.getElementById('clearUser').reset();
+
+//     //actualiza la vista
+//     printUser();
+//     console.log(user);
+// }
+
+
+
+
 
 // Para cargar la imagen
 function openFile(event) {
@@ -92,7 +122,8 @@ function openFile(event) {
 openFile;
 
 window.openFile = openFile;
-
-window.editUser = editUser;
+// window.printUser = printUser;
+// window.editUser = editUser;
+window.userId = userId;
 
 
