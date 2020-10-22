@@ -1,4 +1,5 @@
 import invitations from './invitations.js' 
+import Print from './Print.js'
 const id_user=64;
 
 function callSkills(idInvitation,email){
@@ -12,10 +13,13 @@ function callSkills(idInvitation,email){
     })
     .then(response => response.json())
     .then(data => {
-    printSkills(data,idInvitation,email);
+    //printSkills(data,idInvitation,email);
+    const _printSkills=new Print();
+    _printSkills.printSkills(data,idInvitation,email)
     })
 }
 
+<<<<<<< HEAD
 function printSkills(skills,invitationId,email){
     const allSkills=document.getElementById('skills');
     allSkills.innerHTML='';
@@ -57,6 +61,8 @@ function printSkills(skills,invitationId,email){
                                 
 }
 
+=======
+>>>>>>> ade4877f31b72f159b9ab258b96af93d910bbac9
 function change(a,b){
    // console.log('a='+a+'b='+b)
         // document.getElementById('selection2').disabled=true;
@@ -121,10 +127,9 @@ function summit(length){
         }
         
     }
-      
+    let count=0;
     values.skillsIds.forEach((element,index) => {
         //console.log(values.scores[index]);
-        
         data={score:String(values.scores[index])}
         fetch(`https://matter-app.herokuapp.com/api/v1/invitations/${values.invitationId}/skills/${element}`, {
             method: 'POST',
@@ -138,10 +143,12 @@ function summit(length){
             // response.json()})
             if(response.status==200){
                 alert("los datos se guardaron correctamente")
-                callInvitations(id_user);
+                callInvitations(sessionStorage.getItem('id'));
             }
             else{
-                alert("no se pudo guardar")
+                count+=1;
+                if(count<values.skillsIds.length)
+                alert("no se pudo guardar skill : ")
             }
         })
            
@@ -149,6 +156,13 @@ function summit(length){
     
     
 }
+function callInvitations(id){
 const _invitations=new invitations();
-_invitations.callInvitations(id_user);
+_invitations.callInvitations(id);
+}
+callInvitations(sessionStorage.getItem('id'));
+
 window.callSkills=callSkills;
+window.change=change;
+window.summit=summit;
+window.callInvitations=callInvitations;
