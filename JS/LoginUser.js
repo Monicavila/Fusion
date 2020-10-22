@@ -32,7 +32,7 @@ export default class LoginUser {
         if(statusCode != 200){
             alert('Credenciales inválidas o usuario no existe. Por favor verificar');
         } else {
-            window.location.replace("./invite.html");
+            window.location.replace("./home.html");
             sessionStorage.setItem('id', response.id);   
         }
     }

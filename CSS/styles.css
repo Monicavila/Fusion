@@ -263,3 +263,21 @@ box-shadow: 0 0 250px 20px #42F2A1;
 }
 to { box-shadow: 0 0 100px 15px #F4F6AD; }
 }
+/*MENU*/
+.lg-menu {
+    top: 17px;
+    margin-left: calc(100vw - 540px);
+    border: black;
+  }
+  .lg-menu > a {
+    text-decoration: none;
+    margin: 0 15px 0 15px;
+    color: rgb(75, 160, 181);
+  }
+  .lg-menu a:hover {
+    color: #ffffff;
+  }
+  .lg-menu a.active {
+    color: #ffffff;
+  }
+  
