@@ -22,29 +22,27 @@
             Pfau
         </a>
         <span style="margin-right: 60px;">
-            <button type="button" class="btn btn-light">Log In</button>
-            <a class="btn btn-info my-2 my-sm-0" type="submit" href="./singin.html">Sing Up</a>
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" type="button" class="btn btn-light">Log In</button>
             <div id="id01" class="modal">
       
                 <form onsubmit="event.preventDefault(), login()" class="modal-content animate" action="" method="post">
               
                   <div class="container">
-                    <label for="email"><b>Email</b></label>
+                    <label for="email"><b>Correo electrónico</b></label>
                     <input  type="email" placeholder="Enter email" name="email" id="input-email" required>
               
-                    <label for="psw"><b>Password</b></label>
+                    <label for="psw"><b>Contraseña</b></label>
           
                     <input type="password" placeholder="Enter Password" name="psw" id="input-psw" required>
                       
                     <button type="submit" class="btn btn-info">Log In</button>
                     <label>
-                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                      <input type="checkbox" checked="checked" name="remember"> Recordarme
                     </label>
                   </div>
               
                   <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger" id="cancelbtn">Cancel</button>
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger" id="cancelbtn">Cancelar</button>
                   </div>
                 </form>
             </div>
