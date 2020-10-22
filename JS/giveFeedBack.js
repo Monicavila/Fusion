@@ -83,10 +83,9 @@ function summit(length){
         }
         
     }
-      
+    let count=0;
     values.skillsIds.forEach((element,index) => {
         //console.log(values.scores[index]);
-        
         data={score:String(values.scores[index])}
         fetch(`https://matter-app.herokuapp.com/api/v1/invitations/${values.invitationId}/skills/${element}`, {
             method: 'POST',
@@ -103,7 +102,9 @@ function summit(length){
                 callInvitations(id_user);
             }
             else{
-                alert("no se pudo guardar")
+                count+=1;
+                if(count<values.skillsIds.length)
+                alert("no se pudo guardar skill : ")
             }
         })
            
