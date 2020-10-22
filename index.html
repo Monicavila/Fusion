@@ -26,28 +26,25 @@
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" type="button"
                 class="btn btn-light">Log In</button>
             <div id="id01" class="modal">
-
-                <form onsubmit="event.preventDefault(), login()" class="modal-content animate" action="" method="post">
-
-                    <div class="container">
-                        <label for="email"><b>Correo electrónico</b></label>
-                        <input type="email" placeholder="Ingresar correo electrónico" name="email" id="input-email"
-                            required>
-
-                        <label for="psw"><b>Contraseña</b></label>
-
-                        <input type="password" placeholder="Ingresar contraseña" name="psw" id="input-psw" required>
-
-                        <button type="submit" class="btn btn-info">Log In</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Recordarme
-                        </label>
-                    </div>
-
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                            class="btn btn-danger" id="cancelbtn">Cancelar</button>
-                    </div>
+                <form class="modal-content animate" action="" method="post" id="log-in">
+              
+                  <div class="container">
+                    <label for="email"><b>Email</b></label>
+                    <input  type="email" placeholder="Enter email" name="email" id="input-email" required>
+              
+                    <label for="psw"><b>Password</b></label>
+          
+                    <input type="password" placeholder="Enter Password" name="psw" id="input-psw" required>
+                      
+                    <button type="submit" class="btn btn-info">Log In</button>
+                    <label>
+                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                  </div>
+              
+                  <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger" id="cancelbtn">Cancel</button>
+                  </div>
                 </form>
             </div>
             <a class="btn btn-info my-2 my-sm-0" type="submit" href="./singin.html">Sign Up</a>
@@ -136,8 +133,9 @@
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="./JS/login.js"></script>
+    </div>
+</footer>
+    <script type= "module" src="./JS/login.js"></script>
     <script src="./JS/windowModal.js"></script>
 </body>
 

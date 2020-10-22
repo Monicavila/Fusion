@@ -1,37 +1,11 @@
-function login() {
-    let statusCode;
-    const URL = 'https://matter-app.herokuapp.com/api/v1/auth/login';
-    const METHOD = 'POST'
-    const inputEmail = document.getElementById('input-email').value;
-    const inputPassword = document.getElementById('input-psw').value;
-    
-    const requestBody = { 
-        email: inputEmail,
-        password: inputPassword
-    };
+import LoginUser from './LoginUser.js'
+// función del login del usuario
+document.getElementById('log-in').addEventListener('submit', (event)=> {
+    event.preventDefault();
+    const log = new LoginUser('https://matter-app.herokuapp.com/api/v1/auth/login', 'POST', 
+    document.getElementById('input-email').value, document.getElementById('input-psw').value );
+    log.login();
+}) 
 
-    fetch(URL, {
-      method: METHOD,
-      body: JSON.stringify(requestBody),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    }).then(response => {
-        statusCode = response.status
-        return  statusCode == 200 ? response.json() : undefined;
-    })
-    .catch(error => console.error('Error:', error))
-    .then(data => checkCredentials(data, statusCode))
-}
-
-function checkCredentials(response, statusCode){
-
-    if(statusCode != 200){
-        alert('Credenciales inválidas o usuario no existe. Por favor verificar');
-    } else {
-        window.location.replace("./home.html");
-        sessionStorage.setItem('id', response.id);   
-    }
-}
 
 
