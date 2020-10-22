@@ -21,7 +21,7 @@ export default class Print{
                                             <div class="card-body">
                                                 <h6 class=" card-title">${info.email}</h6>
                                                 <p class="card-text text-justify">Te ha enviado una petición de feedback, pulsa el botón para realizarla.</p>
-                                                <a href="#" onclick="callSkills('${invitation.id}','${info.email}')" class="btn btn-info">FEEDBACK</a>
+                                                <a href="javascript:void(0)" onclick="callSkills('${invitation.id}','${info.email}')" class="btn btn-info">FEEDBACK</a>
                                             </div>
                                         </div>`
             })
