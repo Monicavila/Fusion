@@ -4,7 +4,7 @@ function passSafety() {
     const msg = document.getElementById('passwordHelp')
     if (lengthPass.length < 8) {
         msg.style.color = '#ff3389'
-        alert('La contraseña debe tener almens 8 caracteres')
+        alert('La contraseña debe tener al menos 8 caracteres')
         element.value = ""
         return false
     }

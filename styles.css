@@ -52,22 +52,22 @@
 }
 .footer-bg {
 	z-index: 2;
-	height: 109px;
+	height: 110px;
     background-color: black;
 }
-.txt-footer{
-	padding-top: 20px;
+.txt-footer {
+    padding-top: 20px;
     color: white;
     font-family: 'Architects Daughter', cursive;
     font-size: x-large;
 }
 /*COPYRIGHT*/
-.copyright{
+.copyright {
     width: 100vw;
     height: 60px;
 }
-.copyright p{
-	font-size:12px;
+.copyright p {
+    font-size:12px;
     padding:20px 0 10px 0;
 }
 
