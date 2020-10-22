@@ -280,4 +280,12 @@ to { box-shadow: 0 0 100px 15px #F4F6AD; }
   .lg-menu a.active {
     color: #ffffff;
   }
+/*FEEDBACK*/
+
+  .cards-bg {
+	display: flex;
+	align-items: center;
+ 	background-image: url(https://i.imgur.com/S1SbW7m.png);
+ 	background-repeat: repeat;
+  }
   
