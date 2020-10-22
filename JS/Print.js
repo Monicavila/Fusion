@@ -22,7 +22,7 @@ export default class Print{
                                                 <h5 class="card-title">${name}</h5>
                                                 <h6 class="card-subtitle">${info.email}</h6>
                                                 <p class="card-text">Te ha enviado una petición de feedback, pulsa el botón para realizarla.</p>
-                                                <a href="#" onclick="callSkills('${invitation.id}','${info.email}')" class="btn btn-primary">FEEDBACK</a>
+                                                <a href="#" onclick="event.preventDefault(),callSkills('${invitation.id}','${info.email}')" class="btn btn-primary">FEEDBACK</a>
                                             </div>
                                         </div>`
                 
