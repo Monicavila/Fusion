@@ -5,4 +5,9 @@ function validateUserLoggedIn() {
     }
 }
 
+function logOut(){
+    window.location.replace("./index.html");
+    sessionStorage.clear();
+}
+
 validateUserLoggedIn();
