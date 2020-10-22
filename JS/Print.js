@@ -19,19 +19,11 @@ export default class Print{
                 
                 allPersons.innerHTML+=`<div class="card bg-light col-md-6 col-sm-12 col-xs-12 m-2" style="width: 18rem; display: inline;">
                                             <div class="card-body">
-<<<<<<< HEAD
                                                 <h6 class=" card-title">${info.email}</h6>
                                                 <p class="card-text text-justify">Te ha enviado una petición de feedback, pulsa el botón para realizarla.</p>
                                                 <a href="#" onclick="callSkills('${invitation.id}','${info.email}')" class="btn btn-info">FEEDBACK</a>
-=======
-                                                <h5 class="card-title">${name}</h5>
-                                                <h6 class="card-subtitle">${info.email}</h6>
-                                                <p class="card-text">Te ha enviado una petición de feedback, pulsa el botón para realizarla.</p>
-                                                <a href="#" onclick="event.preventDefault(),callSkills('${invitation.id}','${info.email}')" class="btn btn-primary">FEEDBACK</a>
->>>>>>> ade4877f31b72f159b9ab258b96af93d910bbac9
                                             </div>
                                         </div>`
-                
             })
         }
         else

@@ -19,7 +19,6 @@ function callSkills(idInvitation,email){
     })
 }
 
-<<<<<<< HEAD
 function printSkills(skills,invitationId,email){
     const allSkills=document.getElementById('skills');
     allSkills.innerHTML='';
@@ -61,8 +60,6 @@ function printSkills(skills,invitationId,email){
                                 
 }
 
-=======
->>>>>>> ade4877f31b72f159b9ab258b96af93d910bbac9
 function change(a,b){
    // console.log('a='+a+'b='+b)
         // document.getElementById('selection2').disabled=true;
