@@ -68,6 +68,8 @@ export default class Ui {
                     <div class="card card-body">
                         <label for="name">nombre</label>
                         <input type="text" id="name">
+                        <label for="passUs">contraseña</label>
+                        <input type="text" id="passUs">
                         <button class="btn btn-primary" type="button" onclick="editUser(${user.id})">Editar</button>
                     </div>
                 </div>
