@@ -17,77 +17,67 @@ function ready(){
     const urlFeedback = 'https://matter-app.herokuapp.com/api/v1/users/83/invitations';
     fetch(urlFeedback)
         .then((response) => response.json())
-        .then((data) => {printItemName(data); /*nameUser(data)*/})
+        .then((data) => {printItemName(data); console.log(data);})
 }
-// function nameUser(data){
-//     const test = data;
-//     let nameUser = [ ];
-//     return new Promise((resolve, reject) => {
-//         data.forEach(d => {
-//             const urlNameUser = 'https://matter-app.herokuapp.com/api/v1/users/'+ d.user_invited_id + '';
-//             fetch(urlNameUser)
-//                 .then((response) => response.json())
-//                 .then((data) => nameUser.push(data))    
-//         });
-//         resolve(joint(data, nameUser))
-//     }) // nameUser.forEach( n => { console.log(test[n]) });
-// }
-// function joint(data, user){
-//     let jointName = [ ];
-//     let element;
-//     let newName = 0;
-//     console.log(data);
-//     console.log(user);
+//  function nameUser(data){
+//      const test = data;
+//      let nameUser = [ ];
+//      return new Promise((resolve, reject) => {
+//          data.forEach(d => {
+//              const urlNameUser = 'https:matter-app.herokuapp.com/api/v1/users/'+ d.user_invited_id + '';
+//              fetch(urlNameUser)
+//                  .then((response) => response.json())
+//                  .then((data) => nameUser.push(data))    
+//          });
+//          resolve(joint(data, nameUser))
+//      })  
+//  }
+//  function joint(data, user){
+//      let jointName = [ ];
+//      let element;
+//      let newName = 0;
+//      console.log(data);
+//      console.log(user);
     
-
+//     // setTimeout(( ) =>{
+//     // console.log(user); 
+//     // },2000);
 
 //     setTimeout(( ) =>{
 //         for (let i = 0; i < data.length; i++) {
 //             do{
-//                 if( user[newName]["id"] == data[i].user_invited_id){
-//                     jointName.push(user[newName].name);
+//                 console.log(newName);
+//                 if( user[newName].id == data[i]["user_invited_id"]){
+//                     console.log("Id -" +user[newName].id);
+//                     jointName.push(user[newName]["name"]);
 //                     user.splice(newName, 1);
 //                     break;
 //                 }
 //                 newName++;
 //             }while(newName == data.length)
 //         }
-//     },500);
-//     console.log(jointName);
-    
-
-// }
-
-
-
-
-
+//         // console.log(jointName);
+//     },3000);
+//  }
 function printItemName(data){
     e = 0;
     let containerName = document.getElementsByClassName('content-Name')[0];   
     containerName.innerHTML = " ";
         data.forEach(d => {     
-            // let name = nameUser(d.user_invited_id)
-            //.then((response) => {
-              //  console.log(response, d.user_invited_id)
                 let b = d.skills;
                 if( b.length > 1 ){
                     let cardName = ` <div onclick="ready(), printItem(${e})" class="item-list">
-                                <span> ${e} - ${d.user_invited_id} </span> 
+                                <span> ${e} - ${d.user.name} </span> 
                             </div>`;
                     containerName.innerHTML += cardName;
                 }else{
                     let cardName = ` <div onclick="" class="item-list inactive">
-                                <span> ${e} - ${d.user_invited_id} </span> 
+                                <span> ${e} - ${d.user.name} </span> 
                             </div>`;
                     containerName.innerHTML += cardName;
                 }
-                e++;
-            // });       
-                
-                
+                e++;        
         });
-    
     printFeedback(data)
 }
 
