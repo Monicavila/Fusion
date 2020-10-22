@@ -1,4 +1,5 @@
 import invitations from './invitations.js' 
+import Print from './Print.js'
 const id_user=64;
 
 function callSkills(idInvitation,email){
@@ -12,49 +13,10 @@ function callSkills(idInvitation,email){
     })
     .then(response => response.json())
     .then(data => {
-    printSkills(data,idInvitation,email);
+    //printSkills(data,idInvitation,email);
+    const _printSkills=new Print();
+    _printSkills.printSkills(data,idInvitation,email)
     })
-}
-
-function printSkills(skills,invitationId,email){
-    const allSkills=document.getElementById('skills');
-    allSkills.innerHTML='';
-    const starHtml=`<form onsubmit="event.preventDefault(),summit(${skills.length})" class="card col-md-12 col-sm-12 m-2" style="width: 18rem;" id="form-skills">
-                    <h5 class="card-title">Invitación numero: ${invitationId}</h5>`;
-    let middleHtml='';
-    skills.forEach((skill,index) => {
-        middleHtml+=`            <div >
-                                    <div class="card-body">
-                                        <h5 class="card-title">${skill.name}</h5>
-                                        <h6 class="card-subtitle">${email}</h6>
-                                        <p class="card-text">Califica de 1 a 5 .</p>
-                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                            
-                                                <label id="loption1-${index}" for="option1-${index}"  class="btn btn-outline-primary m-1">
-                                                <input onchange="change('1','${index}')" type="radio" name="option-${skill.id}-${invitationId}" id="option1-${index}" required >1 
-                                                </label>
-                                                <label id="loption2-${index}" for="option2-${index}" class="btn btn-outline-primary m-1">
-                                                <input onchange="change('2','${index}')" type="radio" name="option-${skill.id}-${invitationId}" id="option2-${index}" required>2
-                                                </label>
-                                                <label id="loption3-${index}" class="btn btn-outline-primary m-1">
-                                                <input onchange="change('3','${index}')" type="radio" name="option-${skill.id}-${invitationId}" id="option3-${index}" required>3
-                                                </label>
-                                                <label id="loption4-${index}" class="btn btn-outline-primary m-1">
-                                                <input onchange="change('4','${index}')" type="radio" name="option-${skill.id}-${invitationId}" id="option4-${index}" required>4
-                                                </label>
-                                                <label id="loption5-${index}" class="btn btn-outline-primary m-1">
-                                                <input onchange="change('5','${index}')" type="radio" name="option-${skill.id}-${invitationId}" id="option5-${index}"required>5
-                                                </label>
-                                          
-                                        </div>
-                                    </div>
-                                </div>`
-        
-    });
-    allSkills.innerHTML=starHtml+middleHtml+`<button type="submit" class="btn btn-primary m-2"> ENVIAR </button></form>`;
-    
-   
-                                
 }
 
 function change(a,b){
@@ -121,10 +83,9 @@ function summit(length){
         }
         
     }
-      
+    let count=0;
     values.skillsIds.forEach((element,index) => {
         //console.log(values.scores[index]);
-        
         data={score:String(values.scores[index])}
         fetch(`https://matter-app.herokuapp.com/api/v1/invitations/${values.invitationId}/skills/${element}`, {
             method: 'POST',
@@ -141,7 +102,9 @@ function summit(length){
                 callInvitations(id_user);
             }
             else{
-                alert("no se pudo guardar")
+                count+=1;
+                if(count<values.skillsIds.length)
+                alert("no se pudo guardar skill : ")
             }
         })
            
@@ -149,6 +112,13 @@ function summit(length){
     
     
 }
+function callInvitations(id){
 const _invitations=new invitations();
-_invitations.callInvitations(id_user);
+_invitations.callInvitations(id);
+}
+callInvitations(id_user)
+
 window.callSkills=callSkills;
+window.change=change;
+window.summit=summit;
+window.callInvitations=callInvitations;
