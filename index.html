@@ -25,7 +25,7 @@
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" type="button" class="btn btn-light">Log In</button>
             <div id="id01" class="modal">
       
-                <form onsubmit="event.preventDefault(), login()" class="modal-content animate" action="" method="post">
+                <form class="modal-content animate" action="" method="post" id="log-in">
               
                   <div class="container">
                     <label for="email"><b>Email</b></label>
@@ -122,7 +122,7 @@
         </div>
     </div>
 </footer>
-    <script src="./JS/login.js"></script>
+    <script type= "module" src="./JS/login.js"></script>
     <script src="./JS/windowModal.js"></script>
 </body>
 
