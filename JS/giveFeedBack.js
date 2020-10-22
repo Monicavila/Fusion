@@ -99,7 +99,7 @@ function summit(length){
             // response.json()})
             if(response.status==200){
                 alert("los datos se guardaron correctamente")
-                callInvitations(id_user);
+                callInvitations(sessionStorage.getItem('id'));
             }
             else{
                 count+=1;
@@ -116,7 +116,7 @@ function callInvitations(id){
 const _invitations=new invitations();
 _invitations.callInvitations(id);
 }
-callInvitations(id_user)
+callInvitations(sessionStorage.getItem('id'));
 
 window.callSkills=callSkills;
 window.change=change;
