@@ -67,12 +67,12 @@ function printItemName(data){
                 let b = d.skills;
                 if( b.length > 1 ){
                     let cardName = ` <div onclick="ready(), printItem(${e})" class="item-list">
-                                <span> ${e} - ${d.user.name} </span> 
+                                <span> ${e} - ${d.user_invited.name} </span> 
                             </div>`;
                     containerName.innerHTML += cardName;
                 }else{
                     let cardName = ` <div onclick="" class="item-list inactive">
-                                <span> ${e} - ${d.user.name} </span> 
+                                <span> ${e} - ${d.user_invited.name} </span> 
                             </div>`;
                     containerName.innerHTML += cardName;
                 }
