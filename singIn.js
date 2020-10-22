@@ -61,6 +61,7 @@ class User {
 }
 
 function button() {
+
     const   name = document.getElementById('inputName').value
     const   email = document.getElementById('inputEmail').value
     const   password = document.getElementById('inputPassword').value
