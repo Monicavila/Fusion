@@ -7,9 +7,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="./CSS/loginStyles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredoka+One&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredoka+One&display=swap"
+        rel="stylesheet">
     <title>Pfau</title>
 </head>
 
@@ -22,71 +23,82 @@
             Pfau
         </a>
         <span style="margin-right: 60px;">
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" type="button" class="btn btn-light">Log In</button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" type="button"
+                class="btn btn-light">Identíficate</button>
             <div id="id01" class="modal">
-      
-                <form onsubmit="event.preventDefault(), login()" class="modal-content animate" action="" method="post">
+                <form class="modal-content animate" action="" method="post" id="log-in">
               
                   <div class="container">
-                    <label for="email"><b>Email</b></label>
-                    <input  type="email" placeholder="Enter email" name="email" id="input-email" required>
+                    <label for="email"><b>Correo electrónico</b></label>
+                    <input  type="email" placeholder="Introduce tu correo electrónico" name="email" id="input-email" required>
               
-                    <label for="psw"><b>Password</b></label>
+                    <label for="psw"><b>Contraseña</b></label>
           
-                    <input type="password" placeholder="Enter Password" name="psw" id="input-psw" required>
+                    <input type="password" placeholder="Introduce tu contraseña" name="psw" id="input-psw" required>
                       
-                    <button type="submit" class="btn btn-info">Log In</button>
+                    <button type="submit" class="btn btn-info">Identíficate</button>
                     <label>
-                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                      <input type="checkbox" checked="checked" name="remember"> Recuérdame
                     </label>
                   </div>
               
                   <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger" id="cancelbtn">Cancel</button>
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger" id="cancelbtn">Cancelar</button>
                   </div>
                 </form>
             </div>
-            <a class="btn btn-info my-2 my-sm-0" type="submit" href="./singin.html">Sign Up</a>
+            <a class="btn btn-info my-2 my-sm-0" type="submit" href="./singin.html">Regístrate</a>
         </span>
     </nav>
     <div class="box-welcome">
-            <div class="jt-welcome mx-auto jumbotron col-lg-7">
-                <h1 class="display-4">¡Bienvenido!</h1>
-                <p class="lead text-justify">RH requiere coordinar siempre la retroalimentación de las competencias de tu equipo de trabajo,
-                    para garantizar tienes a los mejores en cada proyecto. También motivar el crecimiento profesional entre tus colaboradores.</p>
-                <hr class="my-4">
-                <p> Prueba la plataforma totalmente gratis y verás que dar retroalimentación es tan sencillo como dar un ¡Me gusta!</p>
-            </div>
+        <div class="jt-welcome mx-auto jumbotron col-lg-7">
+            <h1 class="display-4">¡Bienvenido!</h1>
+            <p class="lead text-justify">RH requiere coordinar siempre la retroalimentación de las competencias de tu
+                equipo de trabajo,
+                para garantizar tienes a los mejores en cada proyecto. También motivar el crecimiento profesional entre
+                tus colaboradores.</p>
+            <hr class="my-4">
+            <p> Prueba la plataforma totalmente gratis y verás que dar retroalimentación es tan sencillo como dar un ¡Me
+                gusta!</p>
+        </div>
     </div>
     <div class="box-cards">
         <div class="container mx-auto">
             <div class="row row-cols-1 row-cols-md-3 mx-md-n4">
                 <div class="col mb-4">
                     <div class="card text-white bg-info shadow mb3">
-                        <img src="https://image.freepik.com/vector-gratis/desarrolladores-software-que-programan-computadora-script_74855-6661.jpg" class="card-img-top img-cards" alt="...">
+                        <img src="https://image.freepik.com/vector-gratis/desarrolladores-software-que-programan-computadora-script_74855-6661.jpg"
+                            class="card-img-top img-cards" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center">Crece como líder de equipo</h5>
-                            <p class="card-text text-justify">Puedes ser evaluado, selecciona las competencias de las cuales quieres recibir retroalimentación de tu equipo
-                                y envía la invitación para recibir tus resultados. Es fundamental conocer nuestras áreas de oportunidad.</p>
+                            <p class="card-text text-justify">Puedes ser evaluado, selecciona las competencias de las
+                                cuales quieres recibir retroalimentación de tu equipo
+                                y envía la invitación para recibir tus resultados. Es fundamental conocer nuestras áreas
+                                de oportunidad.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-4">
                     <div class="card text-white bg-info shadow mb3">
-                        <img src="https://image.freepik.com/vector-gratis/empleados-que-dan-manos-ayudan-sus-colegas-subir-escaleras_74855-5236.jpg" class="card-img-top img-cards" alt="...">
+                        <img src="https://image.freepik.com/vector-gratis/empleados-que-dan-manos-ayudan-sus-colegas-subir-escaleras_74855-5236.jpg"
+                            class="card-img-top img-cards" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center">Motiva el crecimiento del equipo</h5>
-                            <p class="card-text text-justify">Ante todo somos humanos, pasamos por diferentes situaciones en el día a día, es importante tener una herramienta
-                                que nos apoye para saber si nuestro equipo persive bajamos nuestro rendimiento y nos comparta el ¿Por qué?.</p>
+                            <p class="card-text text-justify">Ante todo somos humanos, pasamos por diferentes
+                                situaciones en el día a día, es importante tener una herramienta
+                                que nos apoye para saber si nuestro equipo persive bajamos nuestro rendimiento y nos
+                                comparta el ¿Por qué?.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-4">
                     <div class="card text-white bg-info shadow mb3">
-                        <img src="https://image.freepik.com/vector-gratis/megafono-grande-ruidoso_74855-7630.jpg" class="card-img-top img-cards" alt="...">
+                        <img src="https://image.freepik.com/vector-gratis/megafono-grande-ruidoso_74855-7630.jpg"
+                            class="card-img-top img-cards" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center">Logra una comunicación acertiva</h5>
-                            <p class="card-text text-justify">No para todos es sencillo recibir retroalimentación cuando trabajamos en equipo, también no todos somos excelentes oradores
+                            <p class="card-text text-justify">No para todos es sencillo recibir retroalimentación cuando
+                                trabajamos en equipo, también no todos somos excelentes oradores
                                 cuando damos retroalimentación a los demás. Con Pfau reduce las interpretaciones.</p>
                         </div>
                     </div>
@@ -94,25 +106,26 @@
             </div>
         </div>
     </div>
-<footer class="box-footer p-relative">
-    <div class="footer-bg p-absolute">
-        <div class="container mx-sm justify-content-center text-center">
-            <p class="txt-footer">¡COMIENZA AHORA, EVALÚA LAS COMPETENCIAS QUE REQUIERES!</p>
-            <a class="btn btn-info" type="submit" href="./singin.html">Sign Up</a>
-        </div>
-        <article id="wrap" class="p-absolute" style="background-color: black;">
-            <article id="lightings">
-                <section id="one">
-                    <section id="two">
-                        <section id="three">
-                            <section id="four">
-                                <section id="five"></section>
+    <footer>
+        <div class="box-footer">
+            <div class="footer-bg justify-content-center text-center">
+                <p class="txt-footer">¡COMIENZA AHORA, EVALÚA LAS COMPETENCIAS QUE REQUIERES!</p>
+                <a class="btn btn-info" type="submit" href="./singin.html">Regístrate</a>
+                <article id="wrap" style="background-color: black; height: 130px;">
+                    <article id="lightings">
+                        <section id="one">
+                            <section id="two">
+                                <section id="three">
+                                    <section id="four">
+                                        <section id="five"></section>
+                                    </section>
+                                </section>
                             </section>
                         </section>
-                    </section>
-                </section>
-            </article>
-        </article>
+                    </article>
+                </article>
+            </div>
+        </div>
         <div class="copyright text-white bg-info">
             <div class="container">
                 <div class="text-center">
@@ -122,7 +135,7 @@
         </div>
     </div>
 </footer>
-    <script src="./JS/login.js"></script>
+    <script type= "module" src="./JS/login.js"></script>
     <script src="./JS/windowModal.js"></script>
 </body>
 
