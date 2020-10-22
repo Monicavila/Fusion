@@ -26,8 +26,9 @@ export default class Print{
                                         </div>`
             })
         }
-        else
-        alert("No tiene ninguna invitacion para dar feedback")
+        else {
+            alert("No tiene ninguna invitacion para dar feedback")
+        }
        }
 
     printSkills(skills,invitationId,email){
