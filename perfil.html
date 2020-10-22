@@ -10,14 +10,19 @@
     <div class="container">
         <div class="row">
             <div id="perfil">
+                <label for="input-email">email</label>
+                <input type='text' id="input-email"><br>
+                <label for="input-psw">password</label>
+                <input type='text' id="input-psw">
+                <button type="submit" id="mostrar">mostrar</button>
                 <!-- para la imagen -->
                 <div >
                     <img id='output' width="200px" height="300px"><br>
-                    <input type='file' accept='image/*' onchange='openFile(event)'>           
+                    <input type='file' accept='image/*' id="imgMostrar">           
                 </div>
                 <!-- para imprimir los usuarios -->
                 <div id="users">
-                    <!-- <button type="submit" onclick="printUser(user)">ver</button> -->                    
+                                      
                 </div>                       
             </div>
         </div>
@@ -27,3 +32,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<!-- onchange='openFile(event)' -->
