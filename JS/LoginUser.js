@@ -30,7 +30,13 @@ export default class LoginUser {
     checkCredentials(response, statusCode){
 
         if(statusCode != 200){
-            alert('Credenciales inválidas o usuario no existe. Por favor verificar');
+            swal({
+                title: "¡Por favor verifica!",
+                text: "Credenciales inválidas o el usuario no existe",
+                icon: "warning",
+                button: "Aceptar",
+              });
+            //alert('Credenciales inválidas o usuario no existe. Por favor verificar');
         } else {
             window.location.replace("./home.html");
             sessionStorage.setItem('id', response.id);   

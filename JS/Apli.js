@@ -45,30 +45,37 @@ function printFeedback(data){
     containerItem.innerHTML = " ";
     if(data.length > 0 ){ // ----
         setTimeout(( ) =>{
-            data[i].skills.forEach( e => {
-                let item = itemFeedback(e); 
-                containerItem.innerHTML += item;                       
-            });
+            if(data[i].skills.length > 0){
+                data[i].skills.forEach( e => {
+                    let item = itemFeedback(e); 
+                    containerItem.innerHTML += item;                       
+                });
+            }else{
+                notAnswer(containerItem);
+            }
         },500);    
     }else{ // z---
-            let item = '';
-            let active = ["active"];
-            for (let i = 0; i < 3; i++){
-                item += `<div class="carousel-item ${active[i]}">
-                <img src="photo_${i+1}.jpg" class="d-block w-100" alt="photo_${i}" title="test">
-                <div class="carousel-caption d-none d-md-block line">
-                    <h5> Test </h5>
-                    <span class="material-icons"> military_tech </span>
-                    <span class="material-icons iconDisabled"> military_tech </span>
-                    <span class="material-icons iconDisabled"> military_tech </span>
-                    <span class="material-icons iconDisabled"> military_tech </span>
-                    <span class="material-icons iconDisabled"> military_tech </span>
-                </div>
-            </div>`;    
-            }
-            
-        containerItem.innerHTML += item;                       
+        notAnswer(containerItem);
     } // ----Z
+}
+
+function notAnswer(d){
+    let item = '';
+    let active = ["active"];
+    for (let i = 0; i < 3; i++){
+        item += `<div class="carousel-item ${active[i]}">
+        <img src="photo_${i+1}.jpg" class="d-block w-100" alt="photo_${i}" title="test">
+        <div class="carousel-caption d-none d-md-block line">
+            <h5> Test </h5>
+            <span class="material-icons"> military_tech </span>
+            <span class="material-icons iconDisabled"> military_tech </span>
+            <span class="material-icons iconDisabled"> military_tech </span>
+            <span class="material-icons iconDisabled"> military_tech </span>
+            <span class="material-icons iconDisabled"> military_tech </span>
+        </div>
+    </div>`;    
+    }
+    d.innerHTML += item;                       
 }
 
 function itemFeedback (skill){
