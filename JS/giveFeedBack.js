@@ -119,7 +119,7 @@ function summit(length){
                 values.scores.push(j);
                 const param=document.getElementById(`option${j}-${i}`).name;
                 values.skillsIds.push(param.slice(7,8))
-                values.invitationId=(param.slice(9,11))
+                values.invitationId=(param.slice(9,param.length))
             }
         }
         
