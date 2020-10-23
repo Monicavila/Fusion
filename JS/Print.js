@@ -9,7 +9,7 @@ export default class Print{
             
             onlyValidate.forEach(invitation=>{
                 const info=r[1].find(element=>element.id == invitation.user_id)
-                const name=info.name;
+                let name=info.name;
                 if (name){
 
                 }
