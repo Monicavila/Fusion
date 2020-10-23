@@ -14,7 +14,7 @@
 
 
 function ready(){
-    const urlFeedback = `https://matter-app.herokuapp.com/api/v1/users/${sessionStorage.getitem('id')}/invitations`;
+    const urlFeedback = `https://matter-app.herokuapp.com/api/v1/users/${sessionStorage.getItem('id')}/invitations`;
     fetch(urlFeedback)
         .then((response) => response.json())
         .then((data) => {printItemName(data); console.log(data);})
