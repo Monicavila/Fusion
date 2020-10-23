@@ -8,7 +8,7 @@ export default class Print{
             allPersons.innerHTML='';
             
             onlyValidate.forEach(invitation=>{
-                const info=r[1].find(element=>element.id!=invitation.user_id)
+                const info=r[1].find(element=>element.id == invitation.user_id)
                 const name=info.name;
                 if (name){
 
@@ -17,7 +17,7 @@ export default class Print{
                     name='NN'
                 }
                 
-                allPersons.innerHTML+=`<div class="card bg-light col-md-6 col-sm-12 col-xs-12 m-2" style="width: 18rem; display: inline;">
+                allPersons.innerHTML+=`<div class="shadow card bg-light col-md-6 col-sm-12 col-xs-12 m-2" style="width: 18rem; display: inline;">
                                             <div class="card-body">
                                                 <h6 class=" card-title">${info.email}</h6>
                                                 <p class="card-text text-justify">Te ha enviado una petición de feedback, pulsa el botón para realizarla.</p>
@@ -34,11 +34,11 @@ export default class Print{
     printSkills(skills,invitationId,email){
         const allSkills=document.getElementById('skills');
         allSkills.innerHTML='';
-        const starHtml=`<form onsubmit="event.preventDefault(),summit(${skills.length})" class="card col-md-12 col-sm-12 m-2" style="width: 18rem;" id="form-skills">
-                        <h5 class="card-title">Invitación numero: ${invitationId}</h5>`;
+        const starHtml=`<form onsubmit="event.preventDefault(),summit(${skills.length})" class="shadow bg-info card col-md-12 col-sm-12 m-2" style="width: 18rem;" id="form-skills">
+                        <h5 class="card-title text-white">Invitación numero: ${invitationId}</h5>`;
         let middleHtml='';
         skills.forEach((skill,index) => {
-            middleHtml+=`            <div >
+            middleHtml+=`            <div class="shadow" style="padding: 10px;">
                                         <div class="card-body bg-light" style="padding: 10px;">
                                             <h5 class="card-title">${skill.name}</h5>
                                             <h6 class="card-subtitle">${email}</h6>
@@ -66,7 +66,7 @@ export default class Print{
                                     </div>`
             
         });
-        allSkills.innerHTML=starHtml+middleHtml+`<button type="submit" class="btn btn-info m-2"> ENVIAR </button></form>`;
+        allSkills.innerHTML=starHtml+middleHtml+`<button type="submit" class="btn btn-dark m-2"> ENVIAR </button></form>`;
         
        
                                     

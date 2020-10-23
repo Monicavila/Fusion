@@ -27,7 +27,7 @@ function printSkills(skills,invitationId,email){
     let middleHtml='';
     skills.forEach((skill,index) => {
         middleHtml+=`            <div >
-                                    <div class="card-body bg-light" style="padding: 10px;">
+                                    <div class="card-body bg-light shadow" style="padding: 10px;">
                                         <h5 class="card-title">${skill.name}</h5>
                                         <h6 class="card-subtitle">${email}</h6>
                                         <p class="card-text">Califica de 1 a 5 .</p>
@@ -119,15 +119,16 @@ function summit(length){
                 values.scores.push(j);
                 const param=document.getElementById(`option${j}-${i}`).name;
                 values.skillsIds.push(param.slice(7,8))
-                values.invitationId=(param.slice(9,11))
+                values.invitationId=(param.slice(9,param.length))
             }
         }
         
     }
     let count=0;
+    let count2=0;
     values.skillsIds.forEach((element,index) => {
         //console.log(values.scores[index]);
-        data={score:String(values.scores[index])}
+        const data={score:String(values.scores[index])}
         fetch(`https://matter-app.herokuapp.com/api/v1/invitations/${values.invitationId}/skills/${element}`, {
             method: 'POST',
             headers: {
@@ -138,13 +139,16 @@ function summit(length){
         }) 
         .then(response =>{
             // response.json()})
-            if(response.status==200){
-                alert("los datos se guardaron correctamente")
-                callInvitations(sessionStorage.getItem('id'));
+            if(response.status == 200){
+                count2 += 1;
+                if(count2 >= values.skillsIds.length){
+                    alert("los datos se guardaron correctamente")
+                    callInvitations(sessionStorage.getItem('id'));
+                }                
             }
             else{
-                count+=1;
-                if(count<values.skillsIds.length)
+                count += 1;
+                if(count >= values.skillsIds.length)
                 alert("no se pudo guardar skill : ")
             }
         })
