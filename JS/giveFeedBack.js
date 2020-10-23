@@ -125,9 +125,10 @@ function summit(length){
         
     }
     let count=0;
+    let count2=0;
     values.skillsIds.forEach((element,index) => {
         //console.log(values.scores[index]);
-        data={score:String(values.scores[index])}
+        const data={score:String(values.scores[index])}
         fetch(`https://matter-app.herokuapp.com/api/v1/invitations/${values.invitationId}/skills/${element}`, {
             method: 'POST',
             headers: {
@@ -138,13 +139,16 @@ function summit(length){
         }) 
         .then(response =>{
             // response.json()})
-            if(response.status==200){
-                alert("los datos se guardaron correctamente")
-                callInvitations(sessionStorage.getItem('id'));
+            if(response.status == 200){
+                count2 += 1;
+                if(count2 >= values.skillsIds.length){
+                    alert("los datos se guardaron correctamente")
+                    callInvitations(sessionStorage.getItem('id'));
+                }                
             }
             else{
-                count+=1;
-                if(count<values.skillsIds.length)
+                count += 1;
+                if(count >= values.skillsIds.length)
                 alert("no se pudo guardar skill : ")
             }
         })
