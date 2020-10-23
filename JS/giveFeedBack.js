@@ -27,7 +27,7 @@ function printSkills(skills,invitationId,email){
     let middleHtml='';
     skills.forEach((skill,index) => {
         middleHtml+=`            <div >
-                                    <div class="card-body bg-light" style="padding: 10px;">
+                                    <div class="card-body bg-light shadow" style="padding: 10px;">
                                         <h5 class="card-title">${skill.name}</h5>
                                         <h6 class="card-subtitle">${email}</h6>
                                         <p class="card-text">Califica de 1 a 5 .</p>
