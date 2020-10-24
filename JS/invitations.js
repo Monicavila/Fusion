@@ -16,10 +16,22 @@ export default class Invitations{
         })
         .then(response => response.json())
         .then(data => {
+            if(data.length){
             const idsArray=[];
             data.forEach(element=>idsArray.push(element.user_id))
             _info.callInfo(data,idsArray)
             .then((r)=>_print.printRequests(r))
+            }else{
+                document.getElementById('skills').innerHTML= '';
+                document.getElementById('persons-to-give').innerHTML= '';
+                document.getElementById('persons-to-give').innerHTML +=    `<div class="card shadow border-dark mb-3" style="max-width: 18rem;">
+                                                                                <div class="card-header">Sin invitaciones</div>
+                                                                                <div class="card-body">
+                                                                                <p class="card-text">No tienes solicitudes de feedback que atender.</p>
+                                                                                </div>
+                                                                            </div>`;
+            }
+            
         })
       //  })
     }

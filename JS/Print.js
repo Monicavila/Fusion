@@ -29,10 +29,10 @@ export default class Print{
         else {
             document.getElementById('skills').innerHTML= '';
             document.getElementById('persons-to-give').innerHTML= '';
-            document.getElementById('persons-to-give').innerHTML += `<div class="shadow card bg-light col-md-6 col-sm-12 col-xs-12 m-2" style="width: 18rem; display: inline;">
+            document.getElementById('persons-to-give').innerHTML += `<div class="card shadow border-dark mb-3" style="max-width: 18rem;">
+                                                                        <div class="card-header">Sin invitaciones</div>
                                                                         <div class="card-body">
-                                                                            <h6 class=" card-title">Sin invitaciones</h6>
-                                                                            <p class="card-text text-justify">No tienes solicitudes de feedback que atender.</p>
+                                                                        <p class="card-text">No tienes solicitudes de feedback que atender.</p>
                                                                         </div>
                                                                     </div>`;
         //    alert("No tiene ninguna invitacion para dar feedback")

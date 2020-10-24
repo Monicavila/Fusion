@@ -8,7 +8,11 @@ class User {
     passSafety() {
         let password = this.password 
         if (password.length < 8) {
-            alert('La contraseña debe tener al menos 8 caracteres')
+            swal({
+                text: "La contraseña debe tener al menos 8 caracteres",
+                button: "Aceptar",
+              });
+            //alert('La contraseña debe tener al menos 8 caracteres')
             document.getElementById('inputPassword').value = ""
             return false
         }
@@ -48,15 +52,30 @@ class User {
                 this.successfulForm(response.status, name)
                 return response.json()
             })
-        }else if(status == 422) {alert('El correo ya esta registrado, prueba con otro')}
+        }else if(status == 422) {
+            swal({
+                title: "¡Intenta otra vez!",
+                text: "El correo ya esta registrado.",
+                icon: "warning",
+                button: "Aceptar",
+            })
+        }
+        //alert('El correo ya esta registrado, prueba con otro')}
     }
-
     successfulForm(status, name) {
         if(status == 200){
             const element = document.getElementById('form').reset()
-            alert(name + ', su registro fue exitoso')
-            window.location.replace("./index.html")
+            swal({
+                title: "¡Éxito!",
+                text: name + ", su registro fue exitoso",
+                icon: "success",
+                button: "Aceptar",
+            }).then(function() {
+                window.location.href = "./index.html";
+            });
+            //alert(name + ', su registro fue exitoso')s
         }
+        //setTimeout(window.location.replace("./index.html"),10000)
     }
 }
 

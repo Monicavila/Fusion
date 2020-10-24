@@ -5,7 +5,7 @@ function ready(){
         .then((data) => {printItemName(data)}) // --------
 }
 function printItemName(data){
-    e = 0;
+    e = 1;
     let containerName = document.getElementsByClassName('content-Name')[0];   
     containerName.innerHTML = " ";
     if(data.length > 0){ // ----
@@ -26,7 +26,7 @@ function printItemName(data){
         });
     }else { // Z--------
         let cardName = ` <div onclick="" class="item-list inactive"> 
-                            <span> :( - ¡Aún no aceptan tus invitaciónes de Feedback! </span> 
+                            <span> :( - ¡Aún no envías tus invitaciónes de Feedback! </span> 
                         </div>`;
                 containerName.innerHTML += cardName;
     } // --------Z   
@@ -66,8 +66,8 @@ function notAnswer(d){
         item += `<div class="carousel-item ${active[i]}">
         <img src="photo_${i+1}.jpg" class="d-block w-100" alt="photo_${i}" title="test">
         <div class="carousel-caption d-none d-md-block line">
-            <h5> Test </h5>
-            <span class="material-icons"> military_tech </span>
+            <h3> En espera de un Feedback </h3>
+            <span class="material-icons iconDisabled"> military_tech </span>
             <span class="material-icons iconDisabled"> military_tech </span>
             <span class="material-icons iconDisabled"> military_tech </span>
             <span class="material-icons iconDisabled"> military_tech </span>

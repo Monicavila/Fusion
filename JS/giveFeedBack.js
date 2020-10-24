@@ -142,14 +142,27 @@ function summit(length){
             if(response.status == 200){
                 count2 += 1;
                 if(count2 >= values.skillsIds.length){
-                    alert("los datos se guardaron correctamente")
+                    swal({
+                        title: "¡Éxito!",
+                        text: "Los datos se guardaron correctamente",
+                        icon: "success",
+                        button: "Aceptar",
+                      });
+                    //alert("los datos se guardaron correctamente")
                     callInvitations(sessionStorage.getItem('id'));
                 }                
             }
             else{
                 count += 1;
-                if(count >= values.skillsIds.length)
-                alert("no se pudo guardar skill : ")
+                if(count >= values.skillsIds.length){
+                    swal({
+                        title: "!Error!",
+                        text: "No se pudo guardar skill:",
+                        icon: "error",
+                        button: "Aceptar",
+                      });
+                }
+                //alert("no se pudo guardar skill : ")
             }
         })
            
