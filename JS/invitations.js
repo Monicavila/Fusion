@@ -24,7 +24,7 @@ export default class Invitations{
             }else{
                 document.getElementById('skills').innerHTML= '';
                 document.getElementById('persons-to-give').innerHTML= '';
-                document.getElementById('persons-to-give').innerHTML +=    `<div class="card shadow border-dark mb-3" style="max-width: 18rem;">
+                document.getElementById('persons-to-give').innerHTML +=    `<div class="card shadow border-dark mb-3" style="max-width: 20rem;">
                                                                                 <div class="card-header">Sin invitaciones</div>
                                                                                 <div class="card-body">
                                                                                 <p class="card-text">No tienes solicitudes de feedback que atender.</p>

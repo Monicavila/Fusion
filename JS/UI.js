@@ -28,7 +28,7 @@ export default class Ui {
                         <div id="clearUser" onsubmit="event.preventDefault(), saveUser()">
                             <div class="collapse" id="collapseExample">
                                 <div class="card bg-dark card-body">
-                                    <label class="text-white" for="name">Nombre y apellido</label>
+                                    <label class="text-white" for="name" >Nombre y apellido</label>
                                     <input type="text" id="name">
                                     <label class="text-white" for="passUs">Contraseña</label>
                                     <input type="text" id="passUs">

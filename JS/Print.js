@@ -22,23 +22,23 @@ export default class Print{
                                                 <h6 class=" card-title">${info.email}</h6>
                                                 <p class="card-text text-justify">Te ha enviado una petición de feedback, pulsa el botón para realizarla.</p>
                                                 <a href="javascript:void(0)" onclick="callSkills('${invitation.id}','${info.email}')" class="btn btn-info">FEEDBACK</a>
-                                            </div>
+                                                </div>
                                         </div>`
             })
         }
         else {
             document.getElementById('skills').innerHTML= '';
             document.getElementById('persons-to-give').innerHTML= '';
-            document.getElementById('persons-to-give').innerHTML += `<div class="card shadow border-dark mb-3" style="max-width: 18rem;">
+            document.getElementById('persons-to-give').innerHTML += `<div class="card shadow border-dark mb-4" style="max-width: 20rem;">
                                                                         <div class="card-header">Sin invitaciones</div>
                                                                         <div class="card-body">
                                                                         <p class="card-text">No tienes solicitudes de feedback que atender.</p>
                                                                         </div>
                                                                     </div>`;
         //    alert("No tiene ninguna invitacion para dar feedback")
-        }
-       }
-
+        } 
+    }
+   
     printSkills(skills,invitationId,email){
         const allSkills=document.getElementById('skills');
         allSkills.innerHTML='';
