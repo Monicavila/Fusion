@@ -12,5 +12,9 @@ export default class Invite {
             body: JSON.stringify(userToInvite)
         })
         .then((response)=>response.json())
+        this.resetForm();
+    }
+    resetForm() {
+        document.getElementById('form-invite').reset();
     }
 }

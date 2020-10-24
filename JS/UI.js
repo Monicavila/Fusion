@@ -19,24 +19,23 @@ export default class Ui {
         const tableBody = document.getElementById('users');
         tableBody.innerHTML = '';
         let row = `<br><p>Nombre: ${user.name}</p>
-            <p>Email: ${user.email}</p>
-            <p>Password: ${user.password}</p><br>
-            <p>Para editar presione aquí:</p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Ver
-                </button>
-            </p>
-            <div id="clearUser" onsubmit="event.preventDefault(), saveUser()">
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <label for="name">Nombre y apellido</label>
-                        <input type="text" id="name">
-                        <label for="passUs">Contraseña</label>
-                        <input type="text" id="passUs">
-                        <button class="btn btn-primary" type="button" onclick="editUser()">Editar</button>
-                    </div>
-                </div>
-            </div>`
+                        <p>Email: ${user.email}</p>
+                        <p>Password: ${user.password}</p><br>
+                            <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Editar
+                            </button>
+                        </p>
+                        <div id="clearUser" onsubmit="event.preventDefault(), saveUser()">
+                            <div class="collapse" id="collapseExample">
+                                <div class="card bg-dark card-body">
+                                    <label class="text-white" for="name">Nombre y apellido</label>
+                                    <input type="text" id="name">
+                                    <label class="text-white" for="passUs">Contraseña</label>
+                                    <input type="text" id="passUs">
+                                    <button class="btn btn-light" type="button" onclick="editUser()">Editar</button>
+                                </div>
+                            </div>
+                        </div>`
         tableBody.innerHTML += row; 
     }    
     
